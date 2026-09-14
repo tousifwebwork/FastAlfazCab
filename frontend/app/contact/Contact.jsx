@@ -56,7 +56,7 @@ export default function Contact() {
       showCarToast( "success","Enquiry sent — our team will call you shortly.");
       reset();
 
-    } catch (err) {
+    } catch (err) { 
       showCarToast( "error",err.response?.data?.message||"Something went wrong. Please try again later.");
     }
 

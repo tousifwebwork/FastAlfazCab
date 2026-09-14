@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 const express = require("express");
 const { security } = require("./middleware/security_library");
-const { limiter } = require("./middleware/limiter");
+const { limiter } = require("./middleware/limiter"); 
 
 const app = express();
 
@@ -13,6 +13,11 @@ app.use(express.urlencoded({ extended: true, limit: "2kb" }));
 
 // SECURITY
 security(app);
+
+app.use("/health", (req,res)=>{
+  res.status(200).json({message:"Server is running fine!"})
+})
+
 
 // Routes
 app.use("/car-path", limiter, require("./routes/CarRoute"));
