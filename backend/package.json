@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is a Backend of Alfaz's Car Website.The overall project is been build by MERN stack by tousifwebwork",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@sentry/node": "^10.70.0",
+    "bcryptjs": "^3.0.3",
+    "compression": "^1.8.1",
+    "connect-timeout": "^1.9.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "express-slow-down": "^3.1.0",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.14",
+    "resend": "^6.20.0",
+    "sanitize-html": "^2.17.7",
+    "uuid": "^14.0.1",
+    "validator": "^13.15.35",
+    "winston": "^3.19.0",
+    "zod": "^4.4.3"
+  }
+}
