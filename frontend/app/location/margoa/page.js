@@ -2,6 +2,29 @@ import Footer from "@/app/components/Footer";
 import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
+
+export const metadata = {
+  title: "Cab in Margao Goa | Taxi Service in Margao",
+  description:
+    "Book a reliable cab in Margao with Alfaz. Taxi services available for local travel, airport transfers, sightseeing, and outstation journeys.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/margao",
+  },
+  keywords: [
+    "cab in Margao Goa",
+    "taxi in Margao",
+    "Margao cab service",
+    "Margao taxi service",
+    "Margao airport taxi",
+    "Margao cab booking",
+    "Margao local taxi",
+    "Margao sightseeing cab",
+    "reliable cab Margao",
+    "24/7 taxi Margao",
+  ],
+};
+
+
 const PLACES = [
   {
     number: "01",

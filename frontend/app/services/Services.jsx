@@ -1,5 +1,29 @@
 import FadeIn from "../components/Fadein";
 
+export const metadata = {
+  title: "Cab Services in Goa | Airport, Local & Outstation Taxi",
+  description:
+    "Explore Alfaz cab services in Goa including airport transfers, local taxi rides, sightseeing trips, and comfortable outstation journeys.",
+  alternates: {
+    canonical: "https://yourdomain.com/services",
+  },
+  keywords: [
+    "cab services Goa",
+    "taxi services Goa",
+    "airport taxi Goa",
+    "airport transfer Goa",
+    "local cab Goa",
+    "sightseeing taxi Goa",
+    "outstation taxi Goa",
+    "Goa tour cab",
+    "one way cab Goa",
+    "24/7 taxi Goa",
+    "private cab Goa",
+    "Goa travel taxi",
+  ],
+};
+
+
 const SERVICES = [
   {
     number: "01",

@@ -2,6 +2,29 @@ import Nav from "@/app/components/Nav";
 import FadeIn from "../../components/Fadein";
 import Footer from "@/app/components/Footer";
 
+
+export const metadata = {
+  title: "Cab in Panjim Goa | Taxi Service in Panjim",
+  description:
+    "Book a reliable cab in Panjim with Alfaz. Comfortable taxi services for airport transfers, local rides, sightseeing, and outstation travel.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/panjim",
+  },
+  keywords: [
+    "cab in Panjim Goa",
+    "taxi in Panjim",
+    "Panjim cab service",
+    "Panjim taxi service",
+    "Panjim airport taxi",
+    "Panjim cab booking",
+    "Panjim local taxi",
+    "Panjim sightseeing cab",
+    "reliable cab Panjim",
+    "24/7 taxi Panjim",
+  ],
+};
+
+
 const SPOTS = [
   {
     number: "01",

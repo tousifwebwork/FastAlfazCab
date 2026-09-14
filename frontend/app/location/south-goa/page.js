@@ -2,6 +2,29 @@ import Footer from "@/app/components/Footer";
 import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
+export const metadata = {
+  title: "Cab in South Goa | Taxi Service in South Goa",
+  description:
+    "Book a reliable cab in South Goa with Alfaz. Safe and comfortable taxi service for local travel, airport transfers, sightseeing, and outstation trips.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/south-goa",
+  },
+  keywords: [
+    "cab in South Goa",
+    "taxi in South Goa",
+    "South Goa cab service",
+    "South Goa taxi service",
+    "South Goa airport taxi",
+    "South Goa sightseeing cab",
+    "South Goa local taxi",
+    "South Goa cab booking",
+    "reliable cab South Goa",
+    "24/7 taxi South Goa",
+    "Goa airport to South Goa taxi",
+    "South Goa travel cab",
+  ],
+};
+
 const PLACES = [
   {
     number: "01",

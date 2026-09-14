@@ -13,6 +13,28 @@ import { showCarToast } from "../components/CarToast";
 // ZOD VALIDATION
 // =========================
 
+export const metadata = {
+  title: "Contact Alfaz Cab Service | Book a Cab in Goa",
+  description:
+    "Contact Alfaz Cab Service to book a reliable cab in Goa for airport transfers, local rides, sightseeing, and outstation travel.",
+  alternates: {
+    canonical: "https://yourdomain.com/contact",
+  },
+  keywords: [
+    "book cab Goa",
+    "contact cab service Goa",
+    "cab booking Goa contact",
+    "taxi booking Goa",
+    "Alfaz cab booking",
+    "Goa taxi booking",
+    "airport taxi booking Goa",
+    "local cab booking Goa",
+    "Goa sightseeing cab booking",
+    "outstation cab booking Goa",
+  ],
+};
+
+
 const contactSchema = z.object({
   name: z.string().trim().min(3, "Name must be at least 3 characters").max(30, "Name must be less than 30 characters"),
   email: z.string().trim().email("Enter a valid email address"),

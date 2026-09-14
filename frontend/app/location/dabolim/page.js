@@ -2,6 +2,29 @@ import Footer from "@/app/components/Footer";
 import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
+export const metadata = {
+  title: "Cab in dabolim Goa | Taxi Service in dabolim",
+  description:
+    "Book a reliable cab in dabolim with Alfaz. Taxi services available for local travel, airport transfers, sightseeing, and outstation journeys.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/dabolim",
+  },
+  keywords: [
+    "cab in Dabolim Goa",
+    "taxi in Dabolim",
+    "Dabolim cab service",
+    "Dabolim taxi service",
+    "Dabolim airport taxi",
+    "Dabolim cab booking",
+    "Dabolim local taxi",
+    "Dabolim sightseeing cab",
+    "reliable cab Dabolim",
+    "24/7 taxi Dabolim",
+  ],
+};
+
+
+
 const PLACES = [
   {
     number: "01",

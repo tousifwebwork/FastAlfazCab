@@ -4,6 +4,28 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import LiveProjectButton from "../components/Liveprojectbutton";
 
+
+export const metadata = {
+  title: "Alfaz Cab Gallery | Goa Taxi & Travel",
+  description:
+    "View photos of Alfaz Cab Service vehicles and taxi services across Goa.",
+  alternates: {
+    canonical: "https://yourdomain.com/gallery",
+  },
+  keywords: [
+    "Alfaz cab Goa",
+    "Goa taxi photos",
+    "Goa cab service gallery",
+    "Goa taxi service gallery",
+    "cab in Goa photos",
+    "taxi in Goa photos",
+    "Goa travel cab",
+    "Goa sightseeing taxi",
+    "Goa airport taxi",
+    "Goa cab vehicles",
+  ],
+};
+
 const PROJECTS = [
   {
     number: "01",

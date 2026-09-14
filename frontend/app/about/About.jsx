@@ -3,6 +3,27 @@ import FadeIn from "../components/Fadein";
 import AnimatedText from "../components/Animatedtext";
 import ContactButton from "../components/Contactbutton";
 
+export const metadata = {
+  title: "About Alfaz Cab Service | Trusted Taxi Service in Goa",
+  description:
+    "Learn about Alfaz Cab Service, a trusted Goa taxi service providing comfortable and reliable rides for airport transfers, local travel, and outstation trips.",
+  alternates: {
+    canonical: "https://yourdomain.com/about",
+  },
+  keywords: [
+    "Alfaz cab service",
+    "Alfaz taxi Goa",
+    "Goa taxi service",
+    "trusted cab service Goa",
+    "reliable taxi Goa",
+    "professional cab service Goa",
+    "local taxi service Goa",
+    "Goa cab company",
+    "taxi service provider Goa",
+    "best cab service Goa",
+  ],
+};
+
 const DECOR = [
   {
     src: "https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png",
@@ -140,7 +161,7 @@ export default function About() {
                 style={{ color: "#D7E2EA", opacity: 0.75, fontSize: "clamp(0.9rem, 1.6vw, 1.1rem)" }}
               >
                 From beach towns to inland villages, we cover every corner
-                of Goa. Tap a location to see what's there and what a ride
+                of Goa. Tap a location to see what&rsquo;s there and what a ride
                 looks like.
               </p>
             </div>

@@ -2,6 +2,31 @@ import Footer from "@/app/components/Footer";
 import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
+
+export const metadata = {
+  title: "Cab in North Goa | Taxi Service in North Goa",
+  description:
+    "Book a reliable cab in North Goa with Alfaz. Comfortable taxi service for airport transfers, sightseeing, local travel, and outstation trips.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/north-goa",
+  },
+  keywords: [
+    "cab in North Goa",
+    "taxi in North Goa",
+    "North Goa cab service",
+    "North Goa taxi service",
+    "North Goa airport taxi",
+    "North Goa sightseeing cab",
+    "North Goa local taxi",
+    "North Goa cab booking",
+    "reliable cab North Goa",
+    "24/7 taxi North Goa",
+    "Goa airport to North Goa taxi",
+    "North Goa travel cab",
+  ],
+};
+
+
 const PLACES = [
   {
     number: "01",

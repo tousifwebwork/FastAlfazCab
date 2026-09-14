@@ -2,6 +2,28 @@ import Nav from "@/app/components/Nav";
 import FadeIn from "../../components/Fadein";
 import Footer from "@/app/components/Footer";
 
+export const metadata = {
+  title: "Cab in Ponda Goa | Taxi Service in Ponda",
+  description:
+    "Looking for a cab in Ponda, Goa? Alfaz provides reliable taxi services for local travel, airport transfers, sightseeing, and outstation journeys.",
+  alternates: {
+    canonical: "https://yourdomain.com/location/ponda",
+  },
+  keywords: [
+    "cab in Ponda Goa",
+    "taxi in Ponda Goa",
+    "Ponda cab service",
+    "Ponda taxi service",
+    "Ponda airport taxi",
+    "Ponda cab booking",
+    "Ponda local taxi",
+    "Ponda sightseeing taxi",
+    "reliable cab Ponda",
+    "24/7 taxi Ponda",
+  ],
+};
+
+
 const SPOTS = [
   {
     number: "01",

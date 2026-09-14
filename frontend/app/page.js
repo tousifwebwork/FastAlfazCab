@@ -13,14 +13,27 @@ export const metadata = {
   description:
     "Looking for a trusted cab in Goa? Alfaz offers safe, comfortable rides for airport transfers, local trips, and outstation journeys — available 24/7.",
   alternates: { canonical: "https://yourdomain.com/" },
+  keywords: [
+    "cab in Goa",
+    "taxi in Goa",
+    "Goa cab service",
+    "Goa taxi service",
+    "cab booking Goa",
+    "airport taxi Goa",
+    "Goa airport transfer",
+    "Goa sightseeing cab",
+    "local taxi Goa",
+    "outstation cab Goa",
+    "24/7 cab service Goa",
+    "reliable cab Goa",
+  ],
 }
 
 const page = () => {
   return (
     <div className="min-h-screen pt-20" style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
       {/* Schema markup — helps Google understand this is a local cab service */}
-      <script
-        type="application/ld+json"
+      <script  type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -30,8 +43,7 @@ const page = () => {
             "description": "Reliable cab in Goa for airport transfers, local rides, and outstation trips.",
             "telephone": "+91-7776069948"
           }),
-        }}
-      />
+        }}  />
 
       <Nav />
       <main className="mt-10">
