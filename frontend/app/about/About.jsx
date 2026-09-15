@@ -129,7 +129,7 @@ export default function About() {
 
           <AnimatedText
             text="With over five years of experience, I provide safe, reliable, and comfortable cab services with a commitment to making every journey smooth and stress-free. Whether it’s a local ride, airport transfer, or long-distance trip, I’m here to get you where you need to go. Let’s make every journey a pleasant one!"
-            className="text-center font-medium leading-relaxed max-w-[90vw] sm:max-w-[560px] px-2 sm:px-0"
+            className="text-center font-medium leading-relaxed max-w-[90vw] sm:max-w-[560px] px-2 sm:px-0 "
             style={{ color: "#D7E2EA", fontSize: "clamp(1rem, 2vw, 1.35rem)" }}  />
 
         </div>

@@ -4,25 +4,26 @@ import Nav from "@/app/components/Nav";
 
 
 export const metadata = {
-  title: "Cab in Margao Goa | Taxi Service in Margao",
-  description:
-    "Book a reliable cab in Margao with Alfaz. Taxi services available for local travel, airport transfers, sightseeing, and outstation journeys.",
+  title: "Cab Service in Margao Goa | City, Airport & Local Taxi | Alfaz",
+  description:  "Reliable cab and taxi service in Margao, Goa — rides to the municipal market, Holy Spirit Church, Monte Hill and nearby South Goa attractions. Available 24/7.",
   alternates: {
-    canonical: "https://yourdomain.com/location/margao",
+    canonical: "https://yourdomain.com/location/margoa",
   },
   keywords: [
     "cab in Margao Goa",
-    "taxi in Margao",
-    "Margao cab service",
-    "Margao taxi service",
-    "Margao airport taxi",
-    "Margao cab booking",
-    "Margao local taxi",
-    "Margao sightseeing cab",
-    "reliable cab Margao",
-    "24/7 taxi Margao",
+    "taxi Margao Goa",
+    "Margao city taxi",
+    "taxi in margao",
+    "Madgaon taxi",
+    "Margao local cab",
+    "Margao airport transfer",
+    "Margao sightseeing taxi",
   ],
+  openGraph: { title: "Cab Service in Margao Goa | Alfaz", description: "Reliable cab and taxi service in Margao — city trips, airport transfers, sightseeing and South Goa travel. Available 24/7.", url: "https://yourdomain.com/location/margoa", siteName: "Alfaz Cab Service", images: [{ url: "https://yourdomain.com/og-image.jpg", width: 1200, height: 630, alt: "Alfaz Cab Service — Margao Goa" }], locale: "en_IN", type: "website" },
 };
+
+const taxiServiceSchema = { "@context": "https://schema.org", "@type": "TaxiService", name: "Alfaz Cab Service — Margao Goa", image: "https://yourdomain.com/og-image.jpg", description: "Reliable cab and taxi service in Margao for city trips, airport transfers, sightseeing, and local rides.", telephone: "+91-7776069948", priceRange: "₹₹", areaServed: ["Margao", "Madgaon", "Colva", "Benaulim", "Navelim"], address: { "@type": "PostalAddress", addressLocality: "Margao", addressRegion: "Goa", addressCountry: "IN" }, geo: { "@type": "GeoCoordinates", latitude: "15.2750", longitude: "73.9570" } };
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://yourdomain.com/" }, { "@type": "ListItem", position: 2, name: "Margao Goa Cab Service", item: "https://yourdomain.com/location/margoa" }] };
 
 
 const PLACES = [
@@ -55,6 +56,8 @@ const PLACES = [
 export default function Margao() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <section
         className="px-4 sm:px-8 md:px-10 pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24"

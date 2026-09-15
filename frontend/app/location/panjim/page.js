@@ -4,25 +4,25 @@ import Footer from "@/app/components/Footer";
 
 
 export const metadata = {
-  title: "Cab in Panjim Goa | Taxi Service in Panjim",
+  title: "Cab Service in Panjim Goa | City, Airport & Local Taxi | Alfaz",
   description:
-    "Book a reliable cab in Panjim with Alfaz. Comfortable taxi services for airport transfers, local rides, sightseeing, and outstation travel.",
+    "Reliable cab and taxi service in Panjim, Goa — rides to Fontainhas, Miramar, Dona Paula, the Mandovi Riverfront and nearby attractions. Available 24/7.",
   alternates: {
     canonical: "https://yourdomain.com/location/panjim",
   },
   keywords: [
     "cab in Panjim Goa",
-    "taxi in Panjim",
-    "Panjim cab service",
-    "Panjim taxi service",
-    "Panjim airport taxi",
-    "Panjim cab booking",
-    "Panjim local taxi",
-    "Panjim sightseeing cab",
-    "reliable cab Panjim",
-    "24/7 taxi Panjim",
+    "taxi Panjim Goa",
+    "Fontainhas taxi",
+    "Miramar cab service",
+    "Dona Paula taxi",
+    "Panjim airport transfer",
   ],
+  openGraph: { title: "Cab Service in Panjim Goa | Alfaz", description: "Reliable cab and taxi service in Panjim — Fontainhas, Miramar, Dona Paula and beyond. Available 24/7.", url: "https://yourdomain.com/location/panjim", siteName: "Alfaz Cab Service", images: [{ url: "https://yourdomain.com/og-image.jpg", width: 1200, height: 630, alt: "Alfaz Cab Service — Panjim Goa" }], locale: "en_IN", type: "website" },
 };
+
+const taxiServiceSchema = { "@context": "https://schema.org", "@type": "TaxiService", name: "Alfaz Cab Service — Panjim Goa", image: "https://yourdomain.com/og-image.jpg", description: "Reliable cab and taxi service in Panjim for city trips, sightseeing, airport transfers, and local rides.", telephone: "+91-7776069948", priceRange: "₹₹", areaServed: ["Panjim", "Fontainhas", "Miramar", "Dona Paula", "Mandovi Riverfront"], address: { "@type": "PostalAddress", addressLocality: "Panjim", addressRegion: "Goa", addressCountry: "IN" }, geo: { "@type": "GeoCoordinates", latitude: "15.4909", longitude: "73.8278" } };
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://yourdomain.com/" }, { "@type": "ListItem", position: 2, name: "Panjim Goa Cab Service", item: "https://yourdomain.com/location/panjim" }] };
 
 
 const SPOTS = [
@@ -87,6 +87,8 @@ const SPOTS = [
 export default function Panjim() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
 
       <section

@@ -7,16 +7,19 @@ const PORTRAIT_URL =
 export default function Hero() {
   return (
     <>
-     <section
+      <section
         id="home"
         className="relative flex flex-col pt-14 pb-10 sm:pb-0 md:pt-16 sm:min-h-screen space-y-13 sm:space-y-0"
-        style={{ overflowX: "clip" }}   >
+        style={{ overflowX: "clip" }}
+        itemScope
+        itemType="https://schema.org/TaxiService"
+      >
         {/* Mobile-only intro badge */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0">
           <FadeIn delay={0.1} y={15}>
             <span className="inline-flex items-center gap-2 whitespace-nowrap border border-[#D7E2EA]/25 rounded-full px-4 py-1.5 text-[#D7E2EA] uppercase tracking-widest text-[0.6rem] font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D7E2EA] animate-pulse" />
-              Cab Service &middot; Available 24/7
+              Goa Cab &amp; Taxi Service &middot; Available 24/7
             </span>
           </FadeIn>
         </div>
@@ -24,41 +27,37 @@ export default function Hero() {
         {/* Banner Text */}
         <div className="overflow-hidden mt-4 sm:mt-4 md:-mt-5">
           <FadeIn delay={0.15} y={40}>
-             <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[13vw] xs:text-[12vw] sm:text-[11vw] md:text-[12vw] lg:text-[14vw]">
-                 Hi, i&apos;m Alfaz
-             </h1>
+            <h1
+              className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[13vw] xs:text-[12vw] sm:text-[11vw] md:text-[12vw] lg:text-[14vw]"
+              itemProp="name"
+            >
+              Hi, i&apos;m Alfaz
+              <span className="sr-only">
+                {" "}
+                &mdash; Cab &amp; Taxi Service in Goa
+              </span>
+            </h1>
           </FadeIn>
         </div>
 
         {/* Mobile-only supporting line under the heading */}
         <div className="px-6 mt-2">
-          <FadeIn delay={0.25} y={15}>
-            <p className="text-[#D7E2EA]/70 text-center text-[0.9rem] uppercase tracking-wider leading-relaxed">
-              Your driver, your ride, your schedule &mdash; anywhere in the city
-            </p>
-            <span className="text-center block mt-2 text-gray-500">
-                 Reliable cab service in Goa for airport transfers, local rides,
-                 sightseeing and outstation journeys.
-           </span>
-          </FadeIn> 
-        </div>
-
-        {/* Boy Animation */}
-        {/* <div className="relative mx-auto mt-4 z-10 sm:absolute sm:mx-0 sm:mt-0 sm:left-1/2 sm:-translate-x-1/2 sm:bottom-40 w-[230px] xs:w-[250px] sm:w-[240px] md:w-[300px] lg:w-[360px]">
-        <FadeIn delay={0.6} y={30} className="">
-          <Magnet
-            padding={150}
-            strength={3}
-            activeTransition="transform 0.3s ease-out"
-            inactiveTransition="transform 0.6s ease-in-out"   >
-            <img
-              src={PORTRAIT_URL}
-              alt="Jack portrait"
-              className="w-full h-auto"
-            />
-          </Magnet>
-        </FadeIn>
-      </div> */}
+  <FadeIn delay={0.25} y={15}>
+    <h2 className="text-[#D7E2EA]/70 text-center text-[0.9rem] uppercase tracking-wider leading-relaxed font-normal">
+      Your Goa Cab Driver &mdash; Your Ride, Your Schedule, Anywhere
+      in the City
+    </h2>
+    <p
+      className="text-center block mt-2 text-gray-500 max-w-2xl mx-auto"
+      itemProp="description"
+    >
+      Reliable taxi and cab service in Goa for airport transfers,
+      local rides, sightseeing tours and outstation journeys to
+      Calangute, Baga, Anjuna, Panjim, Margao and beyond.
+    </p>
+  </FadeIn>
+</div>
+    
 
         <div className="mt-6 px-6 md:mt-30  ">
           <FadeIn delay={0.45} y={20}>
@@ -68,7 +67,7 @@ export default function Hero() {
                   5+
                 </p>
                 <p className="text-[#D7E2EA]/60 uppercase tracking-wider text-[0.55rem] mt-1">
-                  Years Driving
+                  Years Driving in Goa
                 </p>
               </div>
               <div className="flex-1 border border-[#D7E2EA]/20 rounded-xl py-2.5 text-center">
@@ -89,13 +88,10 @@ export default function Hero() {
               </div>
             </div>
             <div className="md:flex md:justify-center">
-              <a 
-  href="#contact"
-  aria-label="Book a cab ride in Goa with Alfaz"
-  className="block w-full text-center bg-[#D7E2EA] text-[#0C0C0C] font-bold uppercase
-  tracking-widest text-xs rounded-full py-3.5 active:scale-[0.98] transition-transform
-  md:w-fit md:px-20 lg:mt-7" 
-              >
+              <a
+                href="#contact"
+                aria-label="Book a cab or taxi ride in Goa with Alfaz"
+                className="block w-full text-center bg-[#D7E2EA] text-[#0C0C0C] font-bold uppercase tracking-widest text-xs rounded-full py-3.5 active:scale-[0.98] transition-transform  md:w-fit md:px-20 lg:mt-7">
                 Book a Ride
               </a>
             </div>
@@ -105,16 +101,14 @@ export default function Hero() {
         {/* Footer text */}
         <div className="mt-5 lg:mt-10 sm:mt-auto flex justify-center items-end sm:pb-8 md:pb-10 px-4 sm:px-6 md:px-10">
           <FadeIn delay={0.35} y={20}>
-            <p
+            <h3
               className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug w-full text-center sm:text-left"
-              style={{ fontSize: "clamp(0.75rem, 1.4vw, 1.5rem)" }}
-            >
-              A trusted cab service driven by safe, comfortable and reliable
-              journeys
-            </p>
+              style={{ fontSize: "clamp(0.75rem, 1.4vw, 1.5rem)" }} >
+              A Trusted Goa Cab Service &mdash; Safe, Comfortable &amp;
+              Reliable Journeys Every Time
+            </h3>
           </FadeIn>
         </div>
-        
       </section>
     </>
   );

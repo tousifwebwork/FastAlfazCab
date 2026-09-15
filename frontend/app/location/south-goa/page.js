@@ -3,27 +3,25 @@ import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
 export const metadata = {
-  title: "Cab in South Goa | Taxi Service in South Goa",
+  title: "Cab Service in South Goa | Beach, Airport & Local Taxi | Alfaz",
   description:
-    "Book a reliable cab in South Goa with Alfaz. Safe and comfortable taxi service for local travel, airport transfers, sightseeing, and outstation trips.",
+    "Reliable cab and taxi service in South Goa — rides to Colva, Palolem, Benaulim, Cavelossim and nearby beaches. Airport transfers and local trips, available 24/7.",
   alternates: {
     canonical: "https://yourdomain.com/location/south-goa",
   },
   keywords: [
     "cab in South Goa",
-    "taxi in South Goa",
-    "South Goa cab service",
-    "South Goa taxi service",
-    "South Goa airport taxi",
-    "South Goa sightseeing cab",
-    "South Goa local taxi",
-    "South Goa cab booking",
-    "reliable cab South Goa",
-    "24/7 taxi South Goa",
-    "Goa airport to South Goa taxi",
-    "South Goa travel cab",
+    "taxi South Goa",
+    "Colva taxi",
+    "Palolem cab service",
+    "Benaulim taxi",
+    "South Goa airport transfer",
   ],
+  openGraph: { title: "Cab Service in South Goa | Alfaz", description: "Reliable cab and taxi service in South Goa — Colva, Palolem, Benaulim and beyond. Available 24/7.", url: "https://yourdomain.com/location/south-goa", siteName: "Alfaz Cab Service", images: [{ url: "https://yourdomain.com/og-image.jpg", width: 1200, height: 630, alt: "Alfaz Cab Service — South Goa" }], locale: "en_IN", type: "website" },
 };
+
+const taxiServiceSchema = { "@context": "https://schema.org", "@type": "TaxiService", name: "Alfaz Cab Service — South Goa", image: "https://yourdomain.com/og-image.jpg", description: "Reliable cab and taxi service in South Goa for airport transfers, beach trips, and local rides.", telephone: "+91-7776069948", priceRange: "₹₹", areaServed: ["South Goa", "Colva", "Palolem", "Benaulim", "Cavelossim"], address: { "@type": "PostalAddress", addressLocality: "South Goa", addressRegion: "Goa", addressCountry: "IN" }, geo: { "@type": "GeoCoordinates", latitude: "15.2048", longitude: "74.1000" } };
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://yourdomain.com/" }, { "@type": "ListItem", position: 2, name: "South Goa Cab Service", item: "https://yourdomain.com/location/south-goa" }] };
 
 const PLACES = [
   {
@@ -79,6 +77,8 @@ const PLACES = [
 export default function SouthGoa() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <section
         className="px-4 sm:px-8 md:px-10 pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24"

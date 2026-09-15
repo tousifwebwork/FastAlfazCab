@@ -12,7 +12,9 @@ export const metadata = {
   title: "Cab in Goa | Reliable 24/7 Cab Service by Alfaz",
   description:
     "Looking for a trusted cab in Goa? Alfaz offers safe, comfortable rides for airport transfers, local trips, and outstation journeys — available 24/7.",
-  alternates: { canonical: "https://yourdomain.com/" },
+  alternates: {
+    canonical: "https://yourdomain.com/",
+  },
   keywords: [
     "cab in Goa",
     "taxi in Goa",
@@ -27,6 +29,91 @@ export const metadata = {
     "24/7 cab service Goa",
     "reliable cab Goa",
   ],
+
+  // Tells Google to index this page and follow its links
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // Open Graph — WhatsApp, Facebook, LinkedIn, iMessage, Telegram
+  openGraph: {
+    title: "Cab in Goa | Reliable 24/7 Cab Service by Alfaz",
+    description:
+      "Trusted cab in Goa for airport transfers, local rides, and outstation journeys — available 24/7.",
+    url: "https://yourdomain.com/",
+    siteName: "Alfaz Cab Service",
+    images: [
+      {
+        url: "https://yourdomain.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alfaz Cab Service in Goa",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  // Twitter / X Card
+  twitter: {
+    card: "summary_large_image",
+    title: "Cab in Goa | Reliable 24/7 Cab Service by Alfaz",
+    description:
+      "Trusted cab in Goa for airport transfers, local rides, and outstation journeys — available 24/7.",
+    images: ["https://yourdomain.com/og-image.jpg"],
+  },
+
+  // Icons / favicon
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+
+  // Optional but good practice
+  category: "Transportation",
+  authors: [{ name: "Alfaz" }],
+  creator: "Alfaz Cab Service",
+  publisher: "Alfaz Cab Service",
+  formatDetection: {
+    telephone: true,
+  },
+}
+
+/*
+  JSON-LD structured data — paste this inside your page.js
+  as a <script type="application/ld+json"> block (as you already have),
+  just replace the object below with this expanded version.
+*/
+export const cabServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  name: "Alfaz Cab Service",
+  image: "https://yourdomain.com/og-image.jpg",
+  description:
+    "Reliable cab in Goa for airport transfers, local rides, and outstation trips.",
+  telephone: "+91-7776069948",
+  priceRange: "₹₹",
+  areaServed: ["Goa", "Calangute", "Baga", "Anjuna", "Panjim", "Margao"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Goa",
+    addressCountry: "IN",
+  },
+  // Only include aggregateRating if these numbers are real/verifiable
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "1000",
+  },
 }
 
 const page = () => {

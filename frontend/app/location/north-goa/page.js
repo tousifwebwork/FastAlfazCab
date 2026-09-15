@@ -4,25 +4,49 @@ import Nav from "@/app/components/Nav";
 
 
 export const metadata = {
-  title: "Cab in North Goa | Taxi Service in North Goa",
-  description:
-    "Book a reliable cab in North Goa with Alfaz. Comfortable taxi service for airport transfers, sightseeing, local travel, and outstation trips.",
+  title: "Cab Service in North Goa | Airport, Beach & Local Taxi | Alfaz",
+    description: "Reliable cab and taxi service in North Goa — rides to Calangute, Baga, Anjuna, Vagator and nearby beaches. Airport transfers and local trips, available 24/7.",
   alternates: {
     canonical: "https://yourdomain.com/location/north-goa",
   },
   keywords: [
     "cab in North Goa",
-    "taxi in North Goa",
-    "North Goa cab service",
-    "North Goa taxi service",
-    "North Goa airport taxi",
-    "North Goa sightseeing cab",
-    "North Goa local taxi",
-    "North Goa cab booking",
-    "reliable cab North Goa",
-    "24/7 taxi North Goa",
-    "Goa airport to North Goa taxi",
-    "North Goa travel cab",
+    "taxi North Goa",
+    "Calangute taxi",
+    "Baga cab service",
+    "Anjuna taxi",
+    "North Goa airport transfer",
+  ],
+  openGraph: {
+    title: "Cab Service in North Goa | Alfaz",
+    description: "Reliable cab and taxi service in North Goa — Calangute, Baga, Anjuna and beyond. Available 24/7.",
+    url: "https://yourdomain.com/location/north-goa",
+    siteName: "Alfaz Cab Service",
+    images: [{ url: "https://yourdomain.com/og-image.jpg", width: 1200, height: 630, alt: "Alfaz Cab Service — North Goa" }],
+    locale: "en_IN",
+    type: "website",
+  },
+};
+
+const taxiServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  name: "Alfaz Cab Service — North Goa",
+  image: "https://yourdomain.com/og-image.jpg",
+  description: "Reliable cab and taxi service in North Goa for airport transfers, beach trips, and local rides.",
+  telephone: "+91-7776069948",
+  priceRange: "₹₹",
+  areaServed: ["North Goa", "Calangute", "Baga", "Anjuna", "Vagator"],
+  address: { "@type": "PostalAddress", addressLocality: "North Goa", addressRegion: "Goa", addressCountry: "IN" },
+  geo: { "@type": "GeoCoordinates", latitude: "15.5433", longitude: "73.7517" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://yourdomain.com/" },
+    { "@type": "ListItem", position: 2, name: "North Goa Cab Service", item: "https://yourdomain.com/location/north-goa" },
   ],
 };
 
@@ -81,6 +105,8 @@ const PLACES = [
 export default function NorthGoa() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <section
         className="px-4 sm:px-8 md:px-10 pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24"

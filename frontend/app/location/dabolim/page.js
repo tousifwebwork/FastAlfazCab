@@ -3,25 +3,25 @@ import FadeIn from "../../components/Fadein";
 import Nav from "@/app/components/Nav";
 
 export const metadata = {
-  title: "Cab in dabolim Goa | Taxi Service in dabolim",
+  title: "Cab Service in Dabolim | Airport Transfer & Local Taxi | Alfaz",
   description:
-    "Book a reliable cab in dabolim with Alfaz. Taxi services available for local travel, airport transfers, sightseeing, and outstation journeys.",
+    "Reliable cab and taxi service in Dabolim for Goa airport transfers, Vasco da Gama, Bogmalo Beach and nearby South Goa locations. Available 24/7.",
   alternates: {
     canonical: "https://yourdomain.com/location/dabolim",
   },
   keywords: [
     "cab in Dabolim Goa",
-    "taxi in Dabolim",
-    "Dabolim cab service",
-    "Dabolim taxi service",
     "Dabolim airport taxi",
-    "Dabolim cab booking",
+    "Dabolim airport transfer",
+    "Vasco da Gama cab",
+    "Bogmalo Beach taxi",
     "Dabolim local taxi",
-    "Dabolim sightseeing cab",
-    "reliable cab Dabolim",
-    "24/7 taxi Dabolim",
   ],
+  openGraph: { title: "Cab Service in Dabolim | Alfaz", description: "Reliable airport transfer and local taxi service in Dabolim, Vasco da Gama and nearby Goa destinations. Available 24/7.", url: "https://yourdomain.com/location/dabolim", siteName: "Alfaz Cab Service", images: [{ url: "https://yourdomain.com/og-image.jpg", width: 1200, height: 630, alt: "Alfaz Cab Service — Dabolim Goa" }], locale: "en_IN", type: "website" },
 };
+
+const taxiServiceSchema = { "@context": "https://schema.org", "@type": "TaxiService", name: "Alfaz Cab Service — Dabolim", image: "https://yourdomain.com/og-image.jpg", description: "Reliable cab and taxi service in Dabolim for airport transfers, beach trips, and local rides.", telephone: "+91-7776069948", priceRange: "₹₹", areaServed: ["Dabolim", "Goa Airport", "Vasco da Gama", "Bogmalo", "Chicalim"], address: { "@type": "PostalAddress", addressLocality: "Dabolim", addressRegion: "Goa", addressCountry: "IN" }, geo: { "@type": "GeoCoordinates", latitude: "15.3800", longitude: "73.8380" } };
+const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://yourdomain.com/" }, { "@type": "ListItem", position: 2, name: "Dabolim Cab Service", item: "https://yourdomain.com/location/dabolim" }] };
 
 
 
@@ -55,6 +55,8 @@ const PLACES = [
 export default function Dabolim() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Nav />
       <section
         className="px-4 sm:px-8 md:px-10 pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24"
