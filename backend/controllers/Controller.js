@@ -1,9 +1,8 @@
-const transporter = require("../config/email.js");
+const resend = require("../config/email.js");
 const { contactSchema } = require("../middleware/zod.js");
 
 require("dotenv").config();
 
-// Prevents form input from breaking the HTML structure or injecting markup
 function escapeHtml(str = "") {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -35,54 +34,43 @@ exports.ContactController = async (req, res) => {
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeMessage = escapeHtml(message).replace(/\n/g, "<br>");
-    const dateStr = new Date().toLocaleDateString("en-US", {  year: "numeric", month: "short", day: "numeric",});
+    const dateStr = new Date().toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
 
-    await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
+    const { data, error } = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>", // swap once your domain is verified
+      to: process.env.CONTACT_EMAIL,
+      replyTo: email,
       subject: `New Contact Message from ${safeName}`,
       html: `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--[if mso]>
-<style type="text/css">
-  table { border-collapse: collapse; }
-  .fallback-font { font-family: Arial, Helvetica, sans-serif !important; }
-</style>
-<![endif]-->
 </head>
 <body style="margin:0; padding:0; background-color:#f4f5f7;" bgcolor="#f4f5f7">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f4f5f7" style="background-color:#f4f5f7;">
   <tr>
     <td align="center" style="padding:32px 16px;">
       <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff; border:1px solid #e5e7eb; max-width:600px;">
-
-        <!-- Header -->
         <tr>
           <td bgcolor="#111827" style="background-color:#111827; padding:24px 32px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
               <tr>
-                <td align="left" style="color:#ffffff; font-size:18px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;">
-                  New Contact Message
-                </td>
-                <td align="right" style="color:#9ca3af; font-size:12px; font-family:Arial, Helvetica, sans-serif;">
-                  ${dateStr}
-                </td>
+                <td align="left" style="color:#ffffff; font-size:18px; font-weight:bold; font-family:Arial, Helvetica, sans-serif;">New Contact Message</td>
+                <td align="right" style="color:#9ca3af; font-size:12px; font-family:Arial, Helvetica, sans-serif;">${dateStr}</td>
               </tr>
             </table>
           </td>
         </tr>
-
-        <!-- Intro line -->
         <tr>
           <td style="padding:24px 32px 0 32px; font-family:Arial, Helvetica, sans-serif; color:#374151; font-size:14px; line-height:20px;">
             You've received a new message from your website contact form.
           </td>
         </tr>
-
-        <!-- Details card -->
         <tr>
           <td style="padding:20px 32px;">
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e5e7eb;">
@@ -107,23 +95,17 @@ exports.ContactController = async (req, res) => {
             </table>
           </td>
         </tr>
-
-        <!-- CTA button (VML fallback keeps it a solid rectangle in Outlook desktop) -->
         <tr>
           <td style="padding:0 32px 28px 32px;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
               <tr>
                 <td bgcolor="#111827" style="background-color:#111827;">
-                  <a href="mailto:${safeEmail}" style="display:inline-block; padding:12px 24px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none;">
-                    Reply to ${safeName}
-                  </a>
+                  <a href="mailto:${safeEmail}" style="display:inline-block; padding:12px 24px; font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold; color:#ffffff; text-decoration:none;">Reply to ${safeName}</a>
                 </td>
               </tr>
             </table>
           </td>
         </tr>
-
-        <!-- Footer -->
         <tr>
           <td bgcolor="#f9fafb" style="background-color:#f9fafb; padding:16px 32px; border-top:1px solid #e5e7eb;">
             <p style="margin:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#9ca3af; line-height:18px;">
@@ -131,7 +113,6 @@ exports.ContactController = async (req, res) => {
             </p>
           </td>
         </tr>
-
       </table>
     </td>
   </tr>
@@ -139,13 +120,18 @@ exports.ContactController = async (req, res) => {
 </body>
 </html>`,
     });
-    console.log("Email sent successfully");
 
+    if (error) {
+      console.log("Email sent unsuccessfully", error);
+      return res.status(500).json({ message: "Server Side Error" });
+    }
+
+    console.log("Email sent successfully", data);
     res.status(200).json({
       message: "Contact form submitted successfully",
     });
   } catch (err) {
-   console.log("Email sent unsuccessfully", err);
+    console.log("Email sent unsuccessfully", err);
     res.status(500).json({
       message: "Server Side Error",
     });
