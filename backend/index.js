@@ -4,7 +4,7 @@ const { security } = require("./middleware/security_library");
 const { limiter } = require("./middleware/limiter"); 
 
 const app = express();
-
+app.set("trust proxy", 1);
 dotenv.config();
 
 // Body Parser
