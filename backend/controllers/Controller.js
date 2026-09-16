@@ -139,12 +139,13 @@ exports.ContactController = async (req, res) => {
 </body>
 </html>`,
     });
+    console.log("Email sent successfully");
 
     res.status(200).json({
       message: "Contact form submitted successfully",
     });
   } catch (err) {
-    console.error(err);
+   console.log("Email sent unsuccessfully", err);
     res.status(500).json({
       message: "Server Side Error",
     });
